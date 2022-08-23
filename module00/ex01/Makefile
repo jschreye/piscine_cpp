@@ -9,7 +9,9 @@ AR = ar -rc
 SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
-SRCS =	phonebook.cpp
+SRCS =	phonebook.cpp \
+		phonebook_class.cpp \
+		contact_class.cpp
 		
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
