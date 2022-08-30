@@ -2,16 +2,16 @@ NAME = Phonebook
 
 CC = g++-12
 
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -std=c++98 -pedantic
 
 AR = ar -rc
 
 SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
-SRCS =	phonebook.cpp \
-		phonebook_class.cpp \
-		contact_class.cpp
+SRCS =	main.cpp \
+		phonebook.cpp \
+		contact.cpp
 		
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 

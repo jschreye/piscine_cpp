@@ -1,10 +1,18 @@
 #ifndef PHONEBOOK_CLASS_H
 # define PHONEBOOK_CLASS_H
+#include <string>
+#include <iomanip> 
+#include <sstream>
+#include <iostream>
+#include "Contact_Class.hpp"
 
-class Phone
+class Phonebook
 {
     public:
-        Phone(void);
-        ~Phone(void);
+        Phonebook(void);
+        ~Phonebook(void);
+        void display(void);
+        void display_rule(void);
+        Contact contact[8];
 };
 #endif

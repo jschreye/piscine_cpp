@@ -1,6 +1,6 @@
-NAME = Megaphone
+NAME = Zombie
 
-CC = g++-12
+CC = c++
 
 CFLAGS = -Wextra -Werror -Wall -std=c++98
 
@@ -9,7 +9,11 @@ AR = ar -rc
 SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
-SRCS =	megaphone.cpp
+SRCS =	main.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp
+		
 		
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
