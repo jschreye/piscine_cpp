@@ -1,6 +1,7 @@
 #ifndef HARLCLASS_HPP
 # define HARLCLASS_HPP
-#include <iomanip> 
+#include <iomanip>
+#include <iostream>
 #include <string>
 #include <sstream>
 
