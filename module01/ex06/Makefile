@@ -1,4 +1,4 @@
-NAME = Sed_is_for_losers
+NAME = harlFilter
 
 CC = c++
 
@@ -9,7 +9,8 @@ AR = ar -rc
 SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
-SRCS =	main.cpp
+SRCS =	main.cpp \
+		Harl.cpp
 	
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 

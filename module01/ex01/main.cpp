@@ -4,14 +4,9 @@ Zombie* zombieHorde(int N, std::string name);
 
 int main (int argc, char **argv)
 {
-    if (argc <= 1)
+    if (argc != 2)
     {
-        std::cout << "Error argument" << std::endl;
-        return (0);
-    }
-    if (argc > 2)
-    {
-        std::cout << "Error to many arguments" << std::endl;
+        std::cout << "Error arguments" << std::endl;
         return (0);
     }
     int N = 10;

@@ -11,7 +11,6 @@ class Harl
             Harl();
             ~Harl();
             void complain(std::string level);
-            typedef void (Harl::*my_function)(void);
     private:
             void _debug(void);
             void _info(void);

@@ -1,7 +1,6 @@
-NAME = Stream
+NAME = Harl
 
 CC = c++
-
 CFLAGS = -Wextra -Werror -Wall -std=c++98
 
 AR = ar -rc

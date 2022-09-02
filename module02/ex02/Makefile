@@ -1,4 +1,4 @@
-NAME = Sed_is_for_losers
+NAME = Now_we_can_talk
 
 CC = c++
 
@@ -9,7 +9,9 @@ AR = ar -rc
 SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
-SRCS =	main.cpp
+SRCS =	main.cpp \
+		FixedOperator.cpp \
+		Fixed.cpp
 	
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 

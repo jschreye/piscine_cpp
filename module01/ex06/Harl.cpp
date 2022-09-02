@@ -19,19 +19,33 @@ std::string change_min_in_maj(std::string str)
 
 void Harl::complain(std::string level)
 {
+    size_t i = 0;
     level = change_min_in_maj(level);
-    if (level.compare("DEBUG") == 0 || level.compare("INFO") == 0 || level.compare("WARNING") == 0 || level.compare("ERROR") == 0)
+    std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    while(i < tab->size())
     {
-        std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-        my_function fun[] = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
-        for (size_t i = 0; i < tab->size(); ++i)
-        {
-            if (level == tab[i])
-                ((this->*fun[i])());
-        }
+        if (level == tab[i])
+            break ;
+        ++i;
     }
-    else 
-        std::cout << "not a correct argument" << std::endl;
+    switch (i)
+    {
+        case 0:
+            _debug();
+
+        case 1:
+           _info();
+
+        case 2:
+            _warning();
+
+        case 3:
+            _error();
+            break ;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+            break ;
+    }
 }
 
 void Harl::_debug(void)
