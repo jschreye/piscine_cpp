@@ -5,11 +5,11 @@
 
 class ClapTrap
 {
-    public:
+        public:
             ClapTrap();
             ClapTrap(ClapTrap const & src);
             ClapTrap(std::string name);
-            ~ClapTrap();
+            virtual ~ClapTrap();
             void attack(const std::string& target);
             void takeDamage(unsigned int amount); 
             void beRepaired(unsigned int amount);
@@ -22,11 +22,10 @@ class ClapTrap
             void setEnergyPoints(int const energy);
             void setAttackDamage(int const attack);
             ClapTrap &operator=(ClapTrap const & rhs);
-    private:
+        private:
             std::string _name;
             int _HitPoints;
             int _EnergyPoints;
             int _AttackDammage;
 };
-
 #endif

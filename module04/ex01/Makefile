@@ -1,4 +1,5 @@
-NAME = Travail_à_la_chaîne
+NAME = Burn
+
 CC = c++
 
 CFLAGS = -Wextra -Werror -Wall -std=c++98
@@ -9,9 +10,12 @@ SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
 SRCS =	main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp
+		Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
+		Brain.cpp \
 	
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
@@ -24,7 +28,7 @@ RM = rm -f
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) -o $(NAME) $(OBJS)
+	$(CC) -o $(NAME) $(OBJS) #-g3 -fsanitize=address -fno-omit-frame-pointer
 
 $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)

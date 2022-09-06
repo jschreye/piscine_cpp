@@ -1,4 +1,5 @@
-NAME = Travail_à_la_chaîne
+NAME = Polymorphisme
+
 CC = c++
 
 CFLAGS = -Wextra -Werror -Wall -std=c++98
@@ -9,9 +10,11 @@ SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
 SRCS =	main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp
+		Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp 
 	
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 

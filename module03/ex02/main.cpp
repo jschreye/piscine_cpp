@@ -1,17 +1,23 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ClapTrap a("bob");
+    FragTrap a("James");
 
-
+    a.attack("Marie");
+    a.takeDamage(15);
+    a.beRepaired(0);
     std::cout << a.getEnergyPoints() << std::endl;
     std::cout << a.getHitPoints() << std::endl;
-    a.attack("eloise");
-    a.takeDamage(a.getAttackDamage());
-    a.beRepaired(2);
+
+    a.attack("Lili");
+    a.takeDamage(15);
+    a.beRepaired(0);
     std::cout << a.getEnergyPoints() << std::endl;
     std::cout << a.getHitPoints() << std::endl;
+    a.highFivesGuys();
 
     return (0);
 }

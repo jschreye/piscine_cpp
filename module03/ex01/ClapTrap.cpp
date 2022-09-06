@@ -5,7 +5,7 @@ ClapTrap::ClapTrap()
     this->_HitPoints = 10;
     this->_EnergyPoints = 10;
     this->_AttackDammage = 0;
-    std::cout << "constructor create" << std::endl;
+    std::cout << "ClapTrap constructor create" << std::endl;
 }
 
 
@@ -33,37 +33,30 @@ std::string ClapTrap::getName() const
 {
     return (this->_name);
 }
-
 int ClapTrap::getHitPoints() const
 {
     return(this->_HitPoints);
 }
-
 int ClapTrap::getEnergyPoints() const
 {
     return (this->_EnergyPoints);
 }
-
 int ClapTrap::getAttackDamage() const
 {
     return (this->_AttackDammage);
 }
-
 void ClapTrap::setName(std::string const name)
 {
     this->_name = name;
 }
-
 void ClapTrap::setHitPoints(int const hit)
 {
     this->_HitPoints = hit;
 }
-
 void ClapTrap::setEnergyPoints(int const energy)
 {
     this->_EnergyPoints = energy;
 }
-
 void ClapTrap::setAttackDamage(int const attack)
 {
     this->_AttackDammage = attack;
