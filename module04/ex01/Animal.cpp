@@ -37,5 +37,4 @@ Animal&	Animal::operator=(const Animal& rhs)
 Animal::~Animal()
 {
 	std::cout << "destroy Animal" << std::endl;
-    return ;
 }

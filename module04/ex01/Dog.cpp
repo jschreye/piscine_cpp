@@ -9,8 +9,9 @@ Dog::Dog()
 
 Dog::Dog(const Dog& Dog)
 {
- 	std::cout << "Copy constructor called" << std::endl;
-	*this = Dog;   
+	this->_Brain = new Brain(*Dog._Brain);
+    this->_type = "Dog";
+ 	std::cout << "Copy constructor called" << std::endl; 
 }
 
 Dog::~Dog()
@@ -21,15 +22,9 @@ Dog::~Dog()
 Dog&	Dog::operator=(const Dog& rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
+	Animal::operator=(rhs);
 	if (this != &rhs)
-	{
-		this->_type = rhs._type;
-		this->_Brain = rhs._Brain;
-		for (int i = 0; i < 100; i++)
-		{
-			this->_Brain->ideas[i] = rhs._Brain->ideas[i];
-		}
-	}
+		this->_Brain = new Brain(*rhs._Brain);
 	return (*this);
 }
 
