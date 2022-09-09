@@ -10,8 +10,12 @@ SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
 SRCS =	main.cpp \
-		ClapTrap.cpp
-	
+		AMateria.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		Character.cpp \
+		MateriaSource.cpp
+		
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
 vpath %.c $(SRCS_DIR)
