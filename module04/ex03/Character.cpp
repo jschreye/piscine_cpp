@@ -46,7 +46,8 @@ void Character::equip(AMateria* m)
 {
 	if (!m)
 		return ;
-	for (int i = 0; i < Character::_size; i++) {
+	for (int i = 0; i < Character::_size; i++)
+	{
 		if (!_tabMateria[i])
 		{
 			_tabMateria[i] = m;

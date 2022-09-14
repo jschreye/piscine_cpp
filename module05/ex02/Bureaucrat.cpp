@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -26,14 +27,30 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
+void Bureaucrat::signForm(Form& name)
+{
+	if (name.getIsSigned() == true)
+	{
+		std::cout << "this document is already signed." << std::endl;
+		return ;
+	}
+	else if (this->_grade >= name.getGradeToSign())
+		std::cout << this->_name << " couldn't sign" << name.getName() << " because the grade value is too low" << std::endl;
+	else
+	{
+		name.setIsSigned(true);
+		std::cout << this->_name << " signed " << name.getName() << std::endl;
+	}
+}
+
 std::string Bureaucrat::getName() const
 {
-	return(this->_name);
+	return(_name);
 }
 
 int Bureaucrat::getGrade() const
 {
-	return (this->_grade);
+	return(_grade);
 }
 
 void Bureaucrat::promotion()
@@ -42,7 +59,7 @@ void Bureaucrat::promotion()
         throw Bureaucrat::GradeTooHighException();
     else
     {
-        this->_grade--;
+        this->_grade -= 1;
         std::cout << "You have win a grade ! " << std::endl;
     }
 }
@@ -53,7 +70,7 @@ void Bureaucrat::destitution()
         throw Bureaucrat::GradeTooLowException();
     else
     {
-        this->_grade++;
+        this->_grade += 1;
         std::cout << "You have lost a grade ! " << std::endl;
     }
 }

@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -24,6 +25,22 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other)
 
 Bureaucrat::~Bureaucrat()
 {
+}
+
+void Bureaucrat::signForm(Form& name)
+{
+	if (name.getIsSigned() == true)
+	{
+		std::cout << "this document is already signed." << std::endl;
+		return ;
+	}
+	else if (this->_grade >= name.getGradeToSign())
+		std::cout << this->_name << " couldn't sign " << name.getName() << " because the grade value is too low" << std::endl;
+	else
+	{
+		name.beSigned(*this);
+		std::cout << this->_name << " signed " << name.getName() << std::endl;
+	}
 }
 
 std::string Bureaucrat::getName() const

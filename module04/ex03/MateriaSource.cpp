@@ -5,9 +5,7 @@
 MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < MateriaSource::_size; i++)
-    {
 		_tabMateria[i] = NULL;
-	}
 }
 
 MateriaSource::MateriaSource(const  MateriaSource&  materiasource)
@@ -30,9 +28,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& rhs)
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < MateriaSource::_size; i++)
-    {
 		delete _tabMateria[i];
-	}
 }
 
 void MateriaSource::learnMateria(AMateria* m)

@@ -16,7 +16,7 @@ class Form
             bool getIsSigned() const;
             int getGradeToSign() const;
             int getGradeToExec() const;
-            //void setIsSigned(bool result);
+            void setIsSigned(bool result);
             std::string  getName() const;
 
             void beSigned(const Bureaucrat bureaucrat);

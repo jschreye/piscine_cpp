@@ -5,7 +5,7 @@ int    main(void)
 {
     try
     {
-        Bureaucrat chef(1, "Henry");
+        Bureaucrat chef(101, "Henry");
         std::cout << chef << std::endl;
         Form a1("a1", 50, 100);
         std::cout << a1 << std::endl;
