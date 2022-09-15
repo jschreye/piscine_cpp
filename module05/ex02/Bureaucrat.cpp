@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -27,20 +27,28 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
-void Bureaucrat::signForm(Form& name)
+void Bureaucrat::signForm(AForm& name) // peu etre try catch
 {
-	if (name.getIsSigned() == true)
+	try
 	{
-		std::cout << "this document is already signed." << std::endl;
-		return ;
+		if (name.getIsSigned() == true)
+				throw Bureaucrat::SignedException();
+		if (this->_grade > name.getGradeToSign())
+		{
+			std::cout << this->_name << " couldn't sign" << name.getName() << " because ";
+			throw Bureaucrat::GradeTooLowException();
+		}
+		else
+		{
+			std::cout << this->_name << " signed " << name.getName() << std::endl;
+			name.beSigned(*this);
+		}
 	}
-	else if (this->_grade >= name.getGradeToSign())
-		std::cout << this->_name << " couldn't sign" << name.getName() << " because the grade value is too low" << std::endl;
-	else
+	catch(const std::exception& e)
 	{
-		name.setIsSigned(true);
-		std::cout << this->_name << " signed " << name.getName() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
+	
 }
 
 std::string Bureaucrat::getName() const
@@ -73,6 +81,35 @@ void Bureaucrat::destitution()
         this->_grade += 1;
         std::cout << "You have lost a grade ! " << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{	
+	try
+	{
+		if (form.getIsSigned() == false)
+			throw Bureaucrat::SignedException();
+		if (this->_grade > form.getGradeToExec())
+		{
+			std::cout << this->_name << " couldn't sign" << form.getName() << " because ";
+			throw Bureaucrat::GradeTooLowException();
+		}
+		else
+		{
+			form.execute(*this);
+			std::cout << this->_name << " executed " << form.getName() << std::endl; 
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+}
+
+const char* Bureaucrat::SignedException::what() const throw()
+{
+	return ("Exception: This document is not good");
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

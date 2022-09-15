@@ -1,20 +1,22 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int    main(void)
 {
     try
     {
-        Bureaucrat chef(101, "Henry");
-        std::cout << chef << std::endl;
-        Form a1("a1", 50, 100);
-        std::cout << a1 << std::endl;
+        Bureaucrat chef(2, "Henry");
+        RobotomyRequestForm a1("jardin");
         chef.signForm(a1);
-        a1.beSigned(chef);
-        chef.signForm(a1);
-        a1.beSigned(chef);
-
-
+        chef.executeForm(a1);
+        chef.executeForm(a1);
+        chef.executeForm(a1);
+        chef.executeForm(a1);
+        chef.executeForm(a1);
+        chef.executeForm(a1);
     }
     catch (Bureaucrat::GradeTooHighException& e)
     {
