@@ -32,5 +32,21 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    executor.getName();
+    std::ofstream os;
+
+    std::cout << executor.getName() << " create a tree!" << std::endl;
+	os.open((this->getName() + "_shrubbery").c_str());
+	if (!os.is_open())
+		return ;
+	os << "               ,@@@@@@@," << std::endl;
+	os << "       ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl;
+	os << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;
+	os << "   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'" << std::endl;
+	os << "   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'" << std::endl;
+	os << "   %&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'" << std::endl;
+	os << "   `&%\\ ` /%&'   |.|         \\ '|8'" << std::endl;
+	os << "       |o|        | |         | |" << std::endl;
+	os << "       |.|        | |         | |" << std::endl;
+	os << "    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_" << std::endl;
+	os.close();
 }

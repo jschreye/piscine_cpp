@@ -9,13 +9,8 @@ int    main(void)
     try
     {
         Bureaucrat chef(2, "Henry");
-        RobotomyRequestForm a1("jardin");
+        ShrubberyCreationForm a1("jardin");
         chef.signForm(a1);
-        chef.executeForm(a1);
-        chef.executeForm(a1);
-        chef.executeForm(a1);
-        chef.executeForm(a1);
-        chef.executeForm(a1);
         chef.executeForm(a1);
     }
     catch (Bureaucrat::GradeTooHighException& e)
