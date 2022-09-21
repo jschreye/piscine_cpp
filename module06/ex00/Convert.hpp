@@ -12,6 +12,7 @@ class Convert
         Convert &operator=(const Convert& rhs);
         ~Convert();
 
+        // fonction de recherche de type
         int is_int(std::string arg);
         int is_float(std::string arg);
         int is_char(std::string arg);

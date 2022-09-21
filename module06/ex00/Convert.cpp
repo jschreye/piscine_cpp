@@ -2,6 +2,9 @@
 
 Convert::Convert()
 {
+	this->_Double = 0;
+	this->_Int = 0;
+	this->_Float = 0;
 }
 
 Convert::Convert(const Convert& convert)

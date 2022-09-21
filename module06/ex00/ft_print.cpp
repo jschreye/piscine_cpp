@@ -10,7 +10,10 @@ void Convert::ft_print_char(std::string arg)
 
 void Convert::ft_print_double(double arg)
 {
-    std::cout << "char: " << "is impossible" << std::endl;
+    if (arg >= 32 && arg <= 126)
+	    std::cout << "char: " << static_cast<char>(arg) << std::endl;
+    else
+        std::cout << "char: " << "is not printable" << std::endl;
     std::cout << "int: " << static_cast<int>(arg) << std::endl;
     std::cout  << std::fixed << std::setprecision(2) << "float: " << static_cast<float>(arg) << 'f' << std::endl;
     std::cout << "double: " << arg << std::endl;
@@ -18,7 +21,10 @@ void Convert::ft_print_double(double arg)
 
 void Convert::ft_print_int(int arg)
 {
-    std::cout << "char: " << "is impossible" << std::endl;
+    if (arg >= 32 && arg <= 126)
+	    std::cout << "char: " << static_cast<char>(arg) << std::endl;
+    else
+        std::cout << "char: " << "is not printable" << std::endl;
     std::cout << "int: " << (arg) << std::endl;
     std::cout << "float: " << static_cast<float>(arg) << std::endl;
     std::cout << "double: " << static_cast<double>(arg) << std::endl;
@@ -26,7 +32,10 @@ void Convert::ft_print_int(int arg)
 
 void Convert::ft_print_float(float arg)
 {
-	 std::cout << "char: " << "is impossible" << std::endl;
+    if (arg >= 32 && arg <= 126)
+	    std::cout << "char: " << static_cast<char>(arg) << std::endl;
+    else
+        std::cout << "char: " << "is not printable" << std::endl;
 	std::cout << "int: " << static_cast<int>(arg) << std::endl;
 	std::cout << std::fixed << std::setprecision(2) << "float: " << arg << 'f' << std::endl;
 	std::cout << "double: " << static_cast<double>(arg) << std::endl;    
