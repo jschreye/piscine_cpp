@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = the_type
 
 CC = c++
 
@@ -10,7 +10,6 @@ SRCS_DIR = ./src
 OBJS_DIR = ./objs
 
 SRCS =	main.cpp \
-		Bureaucrat.cpp
 	
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 

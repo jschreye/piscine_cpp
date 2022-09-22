@@ -20,7 +20,7 @@ class Convert
         int is_nan(std::string arg);
 
         // fonction de transformation
-        float ft_float(std::string arg);
+        float ft_float(const std::string& arg);
         int change_int(const std::string& arg);
         double change_double(const std::string& arg);
 

@@ -32,8 +32,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& r
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	srand(time(0));
-	int value = rand();
+	std::srand(time(0));
+	int value = std::rand();
 
     std::cout << executor.getName() << " makes drill noise" << std::endl;
 	if (value % 2 == 0)
