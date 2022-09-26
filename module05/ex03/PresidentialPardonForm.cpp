@@ -9,7 +9,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target)
     std::cout << "A new PresidentialPardon has created: " << *this << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& src)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& src): AForm()
 {
     *this = src;
 }

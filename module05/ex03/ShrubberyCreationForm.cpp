@@ -9,7 +9,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
     std::cout << "A new ShrubberyCreation has created: " << *this << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& src)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& src):  AForm()
 {
     *this = src;
 }

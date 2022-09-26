@@ -9,7 +9,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
     std::cout << "A new RobotomyRequest has created: " << *this << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& src)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& src):  AForm()
 {
     *this = src;
 }

@@ -1,4 +1,5 @@
 #include "Convert.hpp"
+#include <cstdlib>
 
 double Convert::change_double(const std::string& arg)
 {
