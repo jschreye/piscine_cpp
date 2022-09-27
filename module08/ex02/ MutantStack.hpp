@@ -13,11 +13,10 @@ class  MutantStack : public std::stack<T>
         MutantStack& operator=(const MutantStack& rhs);
         ~MutantStack();
 
-
 };
 
 template <typename T>
-MutantStack<T>::MutantStack()
+MutantStack<T>::MutantStack(): std::stack<T>()
 {
 }
 
@@ -30,11 +29,7 @@ MutantStack<T>::MutantStack(const MutantStack& src)
 template <typename T>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T>& rhs)
 {
-    if (this != rhs)
-    {
-
-    }
-    return (*this);
+    std::stack<T>::operator=(rhs);
 }
 
 template <typename T>

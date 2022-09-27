@@ -74,11 +74,11 @@ void identify(Base& p)
 
 int main()
 {
-    Base* a;
+    Base* p;
 
-    a = generate();
-    identify(a);
-    identify(*a);
-    delete a;
+    p = generate();
+    identify(p);
+    identify(*p);
+    delete p;
     return 0;
 }

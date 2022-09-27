@@ -32,7 +32,7 @@ int Convert::change_int(const std::string& arg)
     
 }
 
-float Convert::ft_float(const std::string& arg)
+float Convert::change_float(const std::string& arg)
 {
     return (atof(arg.c_str()));
 }

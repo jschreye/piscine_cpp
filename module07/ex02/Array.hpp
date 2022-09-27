@@ -24,7 +24,7 @@ class Array {
             }
         };
 
-        Array<T>(const Array & src) 
+        Array<T>(const Array & src): _tab(NULL)
         {
             *this = src;
         };
@@ -41,6 +41,8 @@ class Array {
 
             if (this != &src)
             {
+                if (this->_tab)
+                    delete [] this->_tab;
                 this->_size = src._size;
                 this->_tab = new T[src._size];
                 for (int i = 0; i < size() - 1; i++)
