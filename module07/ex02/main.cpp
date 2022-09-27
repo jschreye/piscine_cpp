@@ -4,14 +4,17 @@
 #define TAB_SIZE 15
 int main(void)
 {
+	Array<std::string> c(12);
+	std::cout << "size of c = " << c.size() << std::endl;
 	Array<int> a(TAB_SIZE);
 
 	try
 	{
 		for (size_t i = 0; i < TAB_SIZE; i++)
 			a[i] = i;
+		const Array<int> a_const(a);
 		for (size_t i = 0; i < TAB_SIZE; i++)
-			std::cout << "a[" << i << "] " << a[i] << '\n';
+			std::cout << "a[" << i << "] " << a_const[i] << '\n';
 		std::cout << std::endl;
 	}
 	catch(const std::exception& e)
@@ -33,3 +36,4 @@ int main(void)
 	}
 	return (0);
 }
+
