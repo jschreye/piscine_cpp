@@ -52,11 +52,11 @@ int  Span::shortestSpan()
         else
         {
             int tmp = this->_tab[1] - this->_tab[0];
-            int tmp1 = this->_tab[1] - this->_tab[0];
-            for (unsigned int i = 0; i < this->_nMax; i++)
+            for (unsigned int i = 0; i < this->_nMax - 1; i++)
             {
-                if (tmp > tmp1)
-                    tmp = this->_tab[i + 1] - this->_tab[i];
+                int tmp1 = this->_tab[i + 1] - this->_tab[i];
+                if (tmp >= tmp1)
+                    tmp = tmp1;
                 else
                     i++;
             }
